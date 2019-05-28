@@ -53,7 +53,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         /**
-         *支持 client id client secret 做登录认证
+         *允许表单认证
          */
         security.allowFormAuthenticationForClients();
     }
@@ -67,8 +67,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
          *  的刷新，就需要添加这样一种技权模式； accessTokenValiditySeconds方法配置了access_token
          *  的过期时间， resourceIds配置了资源 id; secret方法配置了加密后的密码，明文是 123
          */
+        //密码授权模式
         clients.inMemory()
-                .withClient("password")
+                .withClient("client_1")
                 .authorizedGrantTypes("password", "refresh_token")
                 .accessTokenValiditySeconds(1800)
                 .resourceIds("rid")

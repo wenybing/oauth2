@@ -1,6 +1,7 @@
+oauth2的授权模式
+一、密码授权模式 密码式（password）
 1、先启动redis、再启动springboot项目，发一个post请求访问地址如下：
-http://localhost:8080/oauth/token?username=zhangsan&password=123&grant_type=password&client_id=password&scope=all&client_secret=123
-
+http://localhost:8080/oauth/token?username=zhangsan&password=123&grant_type=password&client_id=client_1&scope=all&client_secret=123
 请求地址中包含的参数有用户名、密码、授权模式、客户端 id scope 及客户端密码，基本
 就是授权服务器中所配的数据，请求结果下：
 {
@@ -37,3 +38,18 @@ http://localhost:8080/user/hello?access_token=44717294-b1bc-4a69-a40f-be8ac9a614
 
 
 到此， password 模式得OAuth2 认证体系就搭建成功了
+
+
+
+三、客户端授权模式 客户端模式（Client Credentials Grant）
+
+client模式：http://localhost:8080/oauth/token?client_id=client_3&scope=all&grant_type=client_credentials&client_secret=123
+
+响应结果：
+{
+    "access_token": "c8ea4041-92c2-42cb-84c1-5372d4b15768",
+    "token_type": "bearer",
+    "expires_in": 1799,
+    "scope": "all"
+}
+

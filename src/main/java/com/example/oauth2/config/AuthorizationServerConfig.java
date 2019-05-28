@@ -74,6 +74,14 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .accessTokenValiditySeconds(1800)
                 .resourceIds("rid")
                 .scopes("all")
+                .secret("$2a$10$K0uU50HPrlkFdij/vVdckuV2Waja3Wza6Jb3YulDk/f51.7tEjumG")
+                //添加客户端授权模式
+                .and()
+                .withClient("client_2")
+                .authorizedGrantTypes("client_credentials", "refresh_token")
+                .accessTokenValiditySeconds(1800)
+                .resourceIds("rid")
+                .scopes("all")
                 .secret("$2a$10$K0uU50HPrlkFdij/vVdckuV2Waja3Wza6Jb3YulDk/f51.7tEjumG");
     }
 

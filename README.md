@@ -41,9 +41,9 @@ http://localhost:8080/user/hello?access_token=44717294-b1bc-4a69-a40f-be8ac9a614
 
 
 
-三、客户端授权模式 客户端模式（Client Credentials Grant）
+二、客户端授权模式 客户端模式（Client Credentials Grant）
 
-client模式：http://localhost:8080/oauth/token?client_id=client_3&scope=all&grant_type=client_credentials&client_secret=123
+client模式：http://localhost:8080/oauth/token?client_id=client_2&scope=all&grant_type=client_credentials&client_secret=123
 
 响应结果：
 {
